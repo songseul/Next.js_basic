@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react';
+import { InferGetServerSidePropsType } from 'next';
 import Seo from '../components/Seo';
 
 // index.js 자체가 home
-export default function Home({ results }) {
+export default function Home({
+  results,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   // react.js를 프론트엔드 안에서 실행하는 것을 hydration이라고 부른다
 
   return (
