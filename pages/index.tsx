@@ -6,12 +6,14 @@ export default function Home({
   results,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   // react.js를 프론트엔드 안에서 실행하는 것을 hydration이라고 부른다
-
+  interface movieResults {
+    [key: string]: string | number;
+  }
   return (
     <div className="container">
       <Seo title="Home" />
 
-      {results?.map(movie => (
+      {results?.map((movie: movieResults) => (
         <div className="movie" key={movie.id}>
           <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
           <h4>{movie.original_title}</h4>{' '}
