@@ -4,7 +4,6 @@ import React from 'react';
 
 export default function NavBar() {
   const route = useRouter();
-  console.log(route);
 
   return (
     <nav>
