@@ -70,9 +70,7 @@ export default function Home({
 // 서버에서 하는일
 export async function getServerSideProps() {
   const { results } = await (
-    await fetch(
-      `https://next-js-basic-wans-8z3oczmxh-songseul.vercel.app/api/movies`
-    )
+    await fetch(`https://next-js-basic-wans.vercel.app/api/movies`)
   ).json();
   return {
     props: {
