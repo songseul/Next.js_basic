@@ -1,11 +1,13 @@
 const { redirect } = require('next/dist/server/api-utils');
 
 /** @type {import('next').NextConfig} */
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+
+const API_KEY = NEXT_PUBLIC_API_KEY;
 
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  env: { NEXT_PUBLIC_API_KEY: process.env.NEXT_PUBLIC_API_KEY },
 
   async redirects() {
     return [
