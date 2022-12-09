@@ -1,4 +1,3 @@
-import { GetServerSideProps } from 'next';
 import { InferGetServerSidePropsType } from 'next';
 import Seo from '../../components/Seo';
 export default function Detail({
@@ -14,9 +13,14 @@ export default function Detail({
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({
-  params: { id },
-}) => {
+type Params = {
+  params: {
+    id: string;
+  };
+};
+
+export const getServerSideProps = async ({ params }: Params) => {
+  const { id } = params;
   return {
     props: {
       id,
